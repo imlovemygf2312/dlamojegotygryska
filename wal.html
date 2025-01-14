@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Walentynkowa strona">
+    <title>Walentynki</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white; /* Białe tło */
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column; /* Układ pionowy */
+            align-items: center; /* Wyśrodkowanie w poziomie */
+        }
+
+        .header {
+            text-align: center;
+            color: #ff1493; /* Intensywny różowy */
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 20px 0; /* Odstęp od góry i od dołu */
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        /* Serce */
+        .heart {
+            width: 100px; /* Szerokość serca */
+            height: 100px; /* Wysokość serca */
+            background-color: red; /* Kolor serca */
+            position: relative;
+            transform: rotate(-45deg); /* Obrót serca */
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            width: 100px; /* Szerokość serca */
+            height: 100px; /* Wysokość serca */
+            background-color: red; /* Kolor serca */
+            border-radius: 50%; /* Okrągłe rogi */
+            position: absolute;
+        }
+
+        .heart::before {
+            top: -50px; /* Ustawienie górnego koła */
+            left: 0;
+        }
+
+        .heart::after {
+            top: 0;
+            left: 50px; /* Ustawienie prawego koła */
+        }
+
+        /* Róża */
+        .flower {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 50%; /* Kwiat */
+            margin: 0 20px; /* Odstęp między różą a sercem */
+        }
+
+        .flower::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            width: 4px;
+            height: 80px;
+            background: green; /* Łodyga */
+            transform: translateX(-50%);
+        }
+
+        .flower::after {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            width: 40px;
+            height: 20px;
+            background: linear-gradient(to right, green 50%, transparent 50%);
+            clip-path: polygon(0 100%, 50% 0, 100% 100%);
+            transform: translateX(-50%);
+        }
+
+        /* Guziki */
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 300px;
+            margin-top: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            background-color: #ff1493; /* Intensywny różowy */
+            border: none;
+            border-radius: 10px; /* Zaokrąglone rogi */
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s; /* Efekt po najechaniu */
+        }
+
+        button:hover {
+            background-color: #ff69b4; /* Jasny różowy po najechaniu */
+            transform: scale(1.1); /* Powiększenie przy najechaniu */
+        }
+
+        .tak {
+            background-color: #28a745; /* Zielony dla TAK */
+        }
+
+        .tak:hover {
+            background-color: #45d362; /* Jaśniejszy zielony po najechaniu */
+        }
+
+        .nie {
+            background-color: #dc3545; /* Czerwony dla NIE */
+        }
+
+        .nie:hover {
+            background-color: #e76a6a; /* Jaśniejszy czerwony po najechaniu */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Nika, czy zostaniesz moją walentynką? ❤️
+    </div>
+    <div class="container">
+        <div class="flower"></div> <!-- Róża po lewej -->
+        <div class="heart"></div> <!-- Serce -->
+        <div class="flower"></div> <!-- Róża po prawej -->
+    </div>
+    <div class="buttons">
+        <button class="tak" onclick="window.location.href='https://www.samsung.com';">TAK</button>
+        <button class="nie" onclick="window.location.href='https:xkom.com">NIE</button>
+    </div>
+</body>
+</html>
